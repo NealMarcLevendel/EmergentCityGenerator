@@ -369,3 +369,13 @@ file overrides the derived value.
 - **Bridges.** Supported (a stone deck with rails) but rarely chosen with default settings.
 - **Units.** Designs exist for 8 angles, so a unit row follows a street within a few degrees and the facade line can step by a block where units of different widths meet. Rows meeting at a corner, or units of different angles side by side, may keep two walls back to back for a few cells. The structure files are read by the mod's own reader rather than the game's structure manager; entities saved in a design are ignored.
 - **Not built yet:** chimneys, and placement in other dimensions (only the overworld has been considered).
+
+## AI use disclosure
+
+This project was made with substantial help from generative AI. There's no single standard format for disclosures like this, so this one follows common open-source practice: say which tool was used, what it did, and what people did.
+
+- **Tool:** Claude, an AI assistant made by Anthropic.
+- **What the AI did:** It wrote most of the source code (the city generator, the Minecraft placement code, the house-unit designs and the structure-file reader), the build setup (including the Java 17 selection in `gradlew`), the offline test harness, the preview images it renders, and this README.
+- **What people did:** They set the goals and the design requirements, made the design choices along the way, reviewed the results, and ran and tested the mod in Minecraft.
+- **How it was checked:** The code was tested with the offline harness (block-integrity and layout checks on several terrains) and by playing it in Minecraft 1.20.1 (see "What has and hasn't been verified" above). It has not had a line-by-line human code review, so treat it like any other experimental mod: back up worlds before using it.
+- **Licensing note:** AI-generated material may have unclear copyright status in some places. No third-party code or assets were knowingly copied into this project. Minecraft and Forge belong to their respective owners, and this mod is not affiliated with or endorsed by Mojang, Microsoft or the Forge project.
