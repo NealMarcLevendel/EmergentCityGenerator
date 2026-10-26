@@ -7,13 +7,108 @@ Run one command and villagers grow a historic-style town out of the terrain arou
 - the houses along the streets are built from **house units**: designs stored as ordinary structure files, which you can
   open, edit and add to with a structure block (see *House units*).
 
-## Setup
+## Quick start (no modding experience needed)
 
-1. Download the **Forge 1.20.1 MDK** from files.minecraftforge.net and unzip it.
-2. Copy this project over it, replacing `src/`, `build.gradle`, `settings.gradle` and `gradle.properties`.
-   Keep the MDK's `gradlew`, `gradlew.bat` and `gradle/` folder.
-3. If your MDK uses a different 47.x Forge build, edit `forge_version` in `gradle.properties` to match.
-4. Test with `./gradlew runClient`, or build the jar with `./gradlew build` (it lands in `build/libs/`).
+This folder is a complete, ready-to-run project. The Forge MDK (the official kit for building Forge mods) is already
+included, so you don't need to download anything else by hand. One command builds the mod and opens Minecraft with it
+installed. You don't need a Minecraft launcher or a separate Forge install for testing; a Minecraft account is only needed
+for the normal launcher (see *Playing it in your normal Minecraft*).
+
+### 1. Install Java 17
+
+Minecraft 1.20.1 mods are built with **Java 17**, and the build tool only runs on 17. Installing it alongside a newer Java
+is fine.
+
+- **Mac:** install *Temurin 17* from <https://adoptium.net> (choose version 17, the `.pkg` installer), or, with Homebrew,
+  run `brew install --cask temurin@17`. You don't need to change any settings: this project's `gradlew` finds Java 17 by
+  itself, even if your default Java is newer.
+- **Windows:** install *Temurin 17* from <https://adoptium.net> (the `.msi`). On the installer's *Custom Setup* page,
+  turn on **Set JAVA_HOME variable**. If you also have a newer Java, this makes sure Java 17 is the one used.
+- **Linux:** install your distribution's OpenJDK 17 package (for example `sudo apt install openjdk-17-jdk`).
+
+### 2. Start Minecraft with the mod
+
+Open a terminal in this folder:
+- **Mac:** in Finder, right-click the folder and choose *New Terminal at Folder* (or open Terminal, type `cd `, drag the
+  folder into the window and press Return).
+- **Windows:** open the folder in File Explorer, click the address bar, type `cmd` and press Enter.
+
+Then run:
+
+| Mac / Linux | Windows |
+|---|---|
+| `./gradlew runClient` | `gradlew.bat runClient` |
+
+The **first run takes 5–15 minutes**: it downloads Minecraft, Forge and the build tools (about 1 GB) and prepares them.
+Later runs start in about a minute. The game opens in a new window when it's ready; the terminal keeps printing a log
+while it runs. That's normal; leave the terminal open. Closing the game ends the command.
+
+### 3. Make a test world
+
+1. Click **Singleplayer**, then **Create New World**.
+2. Set **Game Mode** to *Creative* and **Allow Cheats** to *ON* (the city commands need cheats).
+3. Click **More World Options...**, then click **World Type** until it says **City Test (gentle hills, no trees)**. This
+   flat-ish, empty landscape is best for a first try; any normal world works too.
+4. Click **Create New World** and wait for the world to load.
+
+### 4. Grow a town
+
+1. Press **T** to open the chat box. Type `/emergentcity instant 150` and press **Enter**.
+2. Chat shows the three stages: reading the terrain, growing the town and placing blocks. A bar at the top of the screen
+   shows progress. A radius-150 town takes under a minute, a little longer where the game first has to generate the land.
+3. Look around. In Creative, **double-tap the space bar** to fly, hold **space** to rise and **shift** to sink. **F5**
+   switches to an outside view, and **F1** hides the interface for screenshots. For the whole town, raise *Render
+   Distance* to 16 or more in *Options → Video Settings*.
+4. To remove it again, type `/emergentcity undo`.
+
+Then try:
+- `/emergentcity generate 150`: villagers lay out the streets and build the town in front of you (10–20 minutes);
+- `/emergentcity instant 200 bricks boulevards`: a brick town with straight avenues;
+- `/emergentcity instant 200 freestanding`: monuments that stand in the middle of their squares.
+
+The full list of commands and options is under *Commands* below. Radius goes from 48 to 400 blocks.
+
+### Playing it in your normal Minecraft
+
+To add the mod to a regular game:
+1. Run `./gradlew build` (Windows: `gradlew.bat build`). The mod file appears as
+   `build/libs/emergentcity-0.1.0.jar`.
+2. Install **Forge for Minecraft 1.20.1** with the installer from <https://files.minecraftforge.net> ("Install client").
+3. Put the `.jar` file in your Minecraft `mods` folder. On Mac that's `~/Library/Application Support/minecraft/mods`; on
+   Windows it's `%APPDATA%\.minecraft\mods`. Create the folder if it isn't there.
+4. In the Minecraft Launcher, pick the *forge 1.20.1* profile and play.
+
+On a Forge server, put the same `.jar` in the server's `mods` folder. Players need op rights (level 2) for the commands.
+
+### If something goes wrong
+
+| Problem | Fix |
+|---|---|
+| `Emergent City: Java 17 not found` | Install Java 17 (step 1), then run the command again. |
+| `Unsupported class file major version` or *Could not determine java version* | The build is running on the wrong Java. On Windows, set `JAVA_HOME` to the Java 17 folder (reinstall Temurin 17 with *Set JAVA_HOME* turned on) and open a new terminal. |
+| `permission denied: ./gradlew` (Mac/Linux) | Run `chmod +x gradlew` once. |
+| The first run stops with a download or network error | Check your internet connection and run the same command again; it continues where it stopped. |
+| Strange build errors after changing files | Run `./gradlew clean` and then `./gradlew runClient` again. |
+| `Unknown or incomplete command` in chat | Cheats are off: create the world with *Allow Cheats: ON*, or open it to LAN with cheats on (*Esc → Open to LAN*). |
+| The game is slow while a town is placed | Normal for large radii. Try a smaller radius, or `/emergentcity cancel` to stop. |
+
+### What's in this folder
+
+| Path | What it is |
+|---|---|
+| `src/main/java/` | The mod's source code (`com/emergentcity/...`). |
+| `src/main/resources/` | Data files: the house units (`data/emergentcity/structures/units/`), the City Test world type, the mod's description (`META-INF/mods.toml`). |
+| `build.gradle`, `settings.gradle`, `gradle.properties` | Build settings. `gradle.properties` holds the mod's name and version and the Forge version (`forge_version`). |
+| `gradlew`, `gradlew.bat`, `gradle/` | The build tool (Gradle), which downloads everything else it needs. This copy of `gradlew` also picks Java 17 automatically. |
+| `README.txt`, `CREDITS.txt`, `LICENSE.txt`, `changelog.txt` | Forge's own notes from the MDK (about Forge, not this mod). |
+| `preview_*.png` | Pictures used in this README. |
+| `build/`, `run/`, `.gradle/` | Created by the build and by test runs: compiled files, the test game's worlds (`run/saves/`), logs (`run/logs/`) and settings (`run/config/emergentcity.properties`). Safe to delete; they are recreated. |
+| `_to_delete/` | The MDK's original example mod, set aside when this mod was added. Not used; delete it whenever you like. |
+
+**Programmers:** to work on the code in an IDE, open the folder in IntelliJ IDEA (*File → Open*, choose `build.gradle`,
+*Open as Project*) and set the Gradle JVM to 17 (*Settings → Build, Execution, Deployment → Build Tools → Gradle*).
+Run the `runClient` Gradle task to start the game. To use a different Forge 1.20.1 build, change `forge_version` in
+`gradle.properties`.
 
 ## Test world type
 
@@ -251,12 +346,11 @@ file overrides the derived value.
   - **Undo** restored every changed position exactly, and every villager was removed.
   - **Party walls:** 96–98% of the columns between neighbouring houses are a single shared wall (about 95% before, counting only plain houses), with no openings between houses.
   - **Units:** 35–60% of houses are unit houses; the structure files written by `UnitDesigner` are read back by the mod's own reader.
-  - The Minecraft-side code compiles against stand-ins for the Forge and Minecraft classes it uses.
-- **Not verified:** the real Forge build and an actual game session. The stand-ins encode my understanding of the 1.20.1 mappings (official names). If a name or signature differs, `gradlew build` will point at it; send me the error.
+- **In the real game:** the project builds with Forge 47.4.28 and runs in Minecraft 1.20.1 on macOS (`runClient`). Villager towns, cancel and undo have been used in game.
 
 ## Developer tools
 
-`devtools/fakeworld/` holds the fake-world test bench (not part of the mod):
+`devtools/fakeworld/` holds the fake-world test bench. It is not part of the mod, and the copy of the project bundled with the MDK leaves it out:
 - `mkstubs.py` writes minimal stand-ins for the Minecraft and Forge classes the mod uses;
 - `harness/Harness.java` runs a town in a simulated world and reports integrity, courtyards, lighting, preserved structures, maintenance and undo, and renders top-down and isometric PNGs;
 - `UnitDesigner` (in the mod) writes the starting set of unit structure files: `java ... com.emergentcity.city.UnitDesigner <dir>`;
