@@ -1,0 +1,24 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="emergentcity"
+version="0.1.0"
+displayName="Emergent City"
+authors="you"
+description='''Grows a historic European-style city from the terrain around you with local, emergent rules.'''
+
+[[dependencies.emergentcity]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.emergentcity]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,1.21)"
+    ordering="NONE"
+    side="BOTH"

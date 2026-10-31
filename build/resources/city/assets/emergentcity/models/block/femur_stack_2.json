@@ -1,0 +1,1521 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "femur": "emergentcity:block/femur",
+    "particle": "emergentcity:block/femur"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        4,
+        4,
+        3
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#femur",
+          "cullface": "north"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#femur"
+        },
+        "east": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            12,
+            4,
+            15
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            13,
+            4,
+            16
+          ],
+          "texture": "#femur",
+          "cullface": "down"
+        }
+      }
+    },
+    {
+      "from": [
+        0,
+        0,
+        13
+      ],
+      "to": [
+        4,
+        4,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#femur"
+        },
+        "south": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#femur",
+          "cullface": "south"
+        },
+        "east": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            12,
+            4,
+            15
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            13,
+            4,
+            16
+          ],
+          "texture": "#femur",
+          "cullface": "down"
+        }
+      }
+    },
+    {
+      "from": [
+        0.75,
+        0.5,
+        3
+      ],
+      "to": [
+        3.25,
+        3.5,
+        13
+      ],
+      "faces": {
+        "east": {
+          "uv": [
+            3,
+            4,
+            13,
+            8
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            3,
+            4,
+            13,
+            8
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        }
+      }
+    },
+    {
+      "from": [
+        4,
+        0,
+        0
+      ],
+      "to": [
+        8,
+        4,
+        3
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#femur",
+          "cullface": "north"
+        },
+        "south": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#femur"
+        },
+        "east": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            12,
+            4,
+            15
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            13,
+            4,
+            16
+          ],
+          "texture": "#femur",
+          "cullface": "down"
+        }
+      }
+    },
+    {
+      "from": [
+        4,
+        0,
+        13
+      ],
+      "to": [
+        8,
+        4,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#femur"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#femur",
+          "cullface": "south"
+        },
+        "east": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            12,
+            4,
+            15
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            13,
+            4,
+            16
+          ],
+          "texture": "#femur",
+          "cullface": "down"
+        }
+      }
+    },
+    {
+      "from": [
+        4.75,
+        0.5,
+        3
+      ],
+      "to": [
+        7.25,
+        3.5,
+        13
+      ],
+      "faces": {
+        "east": {
+          "uv": [
+            3,
+            4,
+            13,
+            8
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            3,
+            4,
+            13,
+            8
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        }
+      }
+    },
+    {
+      "from": [
+        8,
+        0,
+        0
+      ],
+      "to": [
+        12,
+        4,
+        3
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#femur",
+          "cullface": "north"
+        },
+        "south": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#femur"
+        },
+        "east": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            12,
+            4,
+            15
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            13,
+            4,
+            16
+          ],
+          "texture": "#femur",
+          "cullface": "down"
+        }
+      }
+    },
+    {
+      "from": [
+        8,
+        0,
+        13
+      ],
+      "to": [
+        12,
+        4,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#femur"
+        },
+        "south": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#femur",
+          "cullface": "south"
+        },
+        "east": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            12,
+            4,
+            15
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            13,
+            4,
+            16
+          ],
+          "texture": "#femur",
+          "cullface": "down"
+        }
+      }
+    },
+    {
+      "from": [
+        8.75,
+        0.5,
+        3
+      ],
+      "to": [
+        11.25,
+        3.5,
+        13
+      ],
+      "faces": {
+        "east": {
+          "uv": [
+            3,
+            4,
+            13,
+            8
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            3,
+            4,
+            13,
+            8
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        }
+      }
+    },
+    {
+      "from": [
+        12,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        4,
+        3
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#femur",
+          "cullface": "north"
+        },
+        "south": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#femur"
+        },
+        "east": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            12,
+            4,
+            15
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            13,
+            4,
+            16
+          ],
+          "texture": "#femur",
+          "cullface": "down"
+        }
+      }
+    },
+    {
+      "from": [
+        12,
+        0,
+        13
+      ],
+      "to": [
+        16,
+        4,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#femur"
+        },
+        "south": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#femur",
+          "cullface": "south"
+        },
+        "east": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            12,
+            4,
+            15
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            13,
+            4,
+            16
+          ],
+          "texture": "#femur",
+          "cullface": "down"
+        }
+      }
+    },
+    {
+      "from": [
+        12.75,
+        0.5,
+        3
+      ],
+      "to": [
+        15.25,
+        3.5,
+        13
+      ],
+      "faces": {
+        "east": {
+          "uv": [
+            3,
+            4,
+            13,
+            8
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            3,
+            4,
+            13,
+            8
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        }
+      }
+    },
+    {
+      "from": [
+        0,
+        4,
+        0
+      ],
+      "to": [
+        4,
+        8,
+        3
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#femur",
+          "cullface": "north"
+        },
+        "south": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#femur"
+        },
+        "east": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            12,
+            4,
+            15
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            13,
+            4,
+            16
+          ],
+          "texture": "#femur"
+        }
+      }
+    },
+    {
+      "from": [
+        0,
+        4,
+        13
+      ],
+      "to": [
+        4,
+        8,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#femur"
+        },
+        "south": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#femur",
+          "cullface": "south"
+        },
+        "east": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            12,
+            4,
+            15
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            13,
+            4,
+            16
+          ],
+          "texture": "#femur"
+        }
+      }
+    },
+    {
+      "from": [
+        0.75,
+        4.5,
+        3
+      ],
+      "to": [
+        3.25,
+        7.5,
+        13
+      ],
+      "faces": {
+        "east": {
+          "uv": [
+            3,
+            4,
+            13,
+            8
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            3,
+            4,
+            13,
+            8
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        }
+      }
+    },
+    {
+      "from": [
+        4,
+        4,
+        0
+      ],
+      "to": [
+        8,
+        8,
+        3
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#femur",
+          "cullface": "north"
+        },
+        "south": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#femur"
+        },
+        "east": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            12,
+            4,
+            15
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            13,
+            4,
+            16
+          ],
+          "texture": "#femur"
+        }
+      }
+    },
+    {
+      "from": [
+        4,
+        4,
+        13
+      ],
+      "to": [
+        8,
+        8,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#femur"
+        },
+        "south": {
+          "uv": [
+            8,
+            0,
+            12,
+            4
+          ],
+          "texture": "#femur",
+          "cullface": "south"
+        },
+        "east": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            12,
+            4,
+            15
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            13,
+            4,
+            16
+          ],
+          "texture": "#femur"
+        }
+      }
+    },
+    {
+      "from": [
+        4.75,
+        4.5,
+        3
+      ],
+      "to": [
+        7.25,
+        7.5,
+        13
+      ],
+      "faces": {
+        "east": {
+          "uv": [
+            3,
+            4,
+            13,
+            8
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            3,
+            4,
+            13,
+            8
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        }
+      }
+    },
+    {
+      "from": [
+        8,
+        4,
+        0
+      ],
+      "to": [
+        12,
+        8,
+        3
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#femur",
+          "cullface": "north"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#femur"
+        },
+        "east": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            12,
+            4,
+            15
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            13,
+            4,
+            16
+          ],
+          "texture": "#femur"
+        }
+      }
+    },
+    {
+      "from": [
+        8,
+        4,
+        13
+      ],
+      "to": [
+        12,
+        8,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#femur"
+        },
+        "south": {
+          "uv": [
+            4,
+            0,
+            8,
+            4
+          ],
+          "texture": "#femur",
+          "cullface": "south"
+        },
+        "east": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            12,
+            4,
+            15
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            13,
+            4,
+            16
+          ],
+          "texture": "#femur"
+        }
+      }
+    },
+    {
+      "from": [
+        8.75,
+        4.5,
+        3
+      ],
+      "to": [
+        11.25,
+        7.5,
+        13
+      ],
+      "faces": {
+        "east": {
+          "uv": [
+            3,
+            4,
+            13,
+            8
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            3,
+            4,
+            13,
+            8
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        }
+      }
+    },
+    {
+      "from": [
+        12,
+        4,
+        0
+      ],
+      "to": [
+        16,
+        8,
+        3
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#femur",
+          "cullface": "north"
+        },
+        "south": {
+          "uv": [
+            12,
+            0,
+            16,
+            4
+          ],
+          "texture": "#femur"
+        },
+        "east": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            12,
+            4,
+            15
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            13,
+            4,
+            16
+          ],
+          "texture": "#femur"
+        }
+      }
+    },
+    {
+      "from": [
+        12,
+        4,
+        13
+      ],
+      "to": [
+        16,
+        8,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#femur"
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#femur",
+          "cullface": "south"
+        },
+        "east": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            0,
+            12,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            12,
+            4,
+            15
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            13,
+            4,
+            16
+          ],
+          "texture": "#femur"
+        }
+      }
+    },
+    {
+      "from": [
+        12.75,
+        4.5,
+        3
+      ],
+      "to": [
+        15.25,
+        7.5,
+        13
+      ],
+      "faces": {
+        "east": {
+          "uv": [
+            3,
+            4,
+            13,
+            8
+          ],
+          "texture": "#femur"
+        },
+        "west": {
+          "uv": [
+            3,
+            4,
+            13,
+            8
+          ],
+          "texture": "#femur"
+        },
+        "up": {
+          "uv": [
+            0,
+            8,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        },
+        "down": {
+          "uv": [
+            0,
+            8,
+            3,
+            16
+          ],
+          "texture": "#femur"
+        }
+      }
+    }
+  ]
+}

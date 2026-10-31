@@ -1,0 +1,185 @@
+EMERGENT HISTORIC CITY - metrics report
+terrain: Minecraft area at 98, 86
+seed: -452561135683335295
+fingerprint: 704835f50522b6a5
+
+== Growth phases ==
+phase 1: nodes=51 edges=54 len=980m blocks=4 houses=44 centres=1 plazas=1 landmarks=0 bridges=0 heads=9
+phase 2: nodes=80 edges=86 len=1482m blocks=7 houses=69 centres=1 plazas=1 landmarks=1 bridges=0 heads=9
+phase 3: nodes=103 edges=111 len=1860m blocks=9 houses=89 centres=1 plazas=1 landmarks=1 bridges=0 heads=9
+phase 4: nodes=164 edges=177 len=2825m blocks=14 houses=147 centres=1 plazas=1 landmarks=1 bridges=0 heads=14
+phase 5: nodes=227 edges=248 len=3826m blocks=22 houses=299 centres=1 plazas=1 landmarks=1 bridges=0 heads=14
+phase 6: nodes=274 edges=302 len=4543m blocks=29 houses=354 centres=2 plazas=2 landmarks=1 bridges=0 heads=12
+phase 7: nodes=356 edges=404 len=5584m blocks=49 houses=596 centres=2 plazas=3 landmarks=2 bridges=0 heads=6
+
+== Acceptance criteria ==
+L1    soft PASS   coherent centre(s) with plaza                  2 centre(s), 3 plaza(s)
+L2    soft PASS   monument meets height/width threshold          max H/W 2.31 (min 1.00)
+L3    soft PASS   street hierarchy, width tracks demand          3 classes, Spearman(width, demand)=0.98
+L4    soft PASS   gradual transitions                            0 within-class width jumps > 1.5 m; p90 turn along street 12.0 deg
+L5    soft PASS   few long featureless straight streets          featureless share 8.6% (purposeful axis samples 0)
+L6    soft PASS   terminating vistas and enclosure               facade endpoints 85%, median enclosure 1.00
+L7    soft PASS   compact blocks, few oversize                   median block 1505 m2, oversize 4.1%
+L8    HARD FAIL   all houses valid four-node quads               5 invalid of 596
+L9    soft PASS   fronts face streets, shared gardens            100.0% fronting streets, 100% housed blocks with garden
+L10   soft PASS   ordinary street R near 1:1                     median R ordinary 0.62, major 0.82
+L11a  HARD PASS   planar street graph (no crossings)             0 crossings
+L11b  HARD FAIL   no overlapping / misplaced houses              67 overlaps, 0 outside block, 0 crossing a street
+L11c  HARD PASS   network connected                              100.0% nodes reachable from main centre
+L11d  HARD PASS   streets avoid water except bridges             0 non-bridge segments on water
+L11e  HARD FAIL   min junction angle respected                   min 40.4 deg
+N1    soft PASS   legible tier hierarchy                         tiers 2/3/4 = 71/436/89, monuments 2
+N3    soft PASS   ornament decreases with tier                   mean ornament t1/t2/t3/t4 = 1.00/0.47/0.14/0.02
+N7    soft PASS   coherent street wall                           floor jumps >1 storey 0.0%, style coherence 100%
+N9    soft PASS   monuments break pattern, scarcity kept         landmark/p90 house height 4.2x, tier-2 share 11.9%
+N10   soft PASS   vista endpoints get more important architecture importance lift 0.142
+hard constraints: FAILED; soft criteria passed: 14/14
+
+== Scalar metrics ==
+nodes                                   356.000
+edges                                   404.000
+streetLength_m                         5584.195
+blocks                                   49.000
+houses                                  596.000
+centres                                   2.000
+emergentCentres                           1.000
+plazas                                    3.000
+landmarks                                 2.000
+bridges                                   0.000
+cityRadius_m                            195.662
+edgeCrossings                             0.000
+invalidHouseQuads                         5.000
+houseOverlaps                            67.000
+housesOutsideBlock                        0.000
+housesCrossingStreets                     0.000
+connectedShare                            1.000
+deadEndShare                              0.042
+nonBridgeEdgesOnWater                     0.000
+widthDemandSpearman                       0.979
+lengthShare.class1                        0.313
+lengthShare.class2                        0.523
+lengthShare.class3                        0.160
+lengthShare.class4                        0.004
+withinClassWidthJumps                     0.000
+minJunctionAngle_deg                     40.400
+featurelessVistaShare                     0.086
+vistaFacadeEndpointShare                  0.853
+vistaLandmarkEndpointShare                0.013
+purposefulAxisSamples                     0.000
+countrysideViewShare                      0.046
+E_proportion_mean_ordinary                0.336
+oversizeBlockShare                        0.041
+housedBlocksWithGardenShare               1.000
+housesFrontingStreetShare                 1.000
+landmarkMaxHW                             2.310
+landmarkMaxVisibility                     0.415
+tier2Share                                0.119
+tier2MeanOrnament                         0.469
+tier3Share                                0.732
+tier3MeanOrnament                         0.138
+tier4Share                                0.149
+tier4MeanOrnament                         0.025
+tier1MeanOrnament                         1.000
+landmarkToP90HouseHeight                  4.201
+neighbourFloorJumpShare                   0.000
+neighbourStyleCoherence                   1.000
+vistaEndpointImportanceLift               0.142
+
+== Distributions (min / p10 / median / p90 / max / mean) ==
+turnAngleAlongStreets_deg              0.00     0.00     6.00    12.00    36.86     6.46
+streetWidth_m                          3.10     3.36     4.74     6.66     9.00     4.83
+streetLength_m (chains)               13.32    19.07    55.93   148.25   546.01    83.35
+vistaRatio (len/width)                 1.33     3.33     6.67    17.19    53.79     8.84
+enclosure (0-1)                        0.00     0.50     1.00     1.00     1.00     0.85
+R width/height ordinary                0.28     0.44     0.62     0.78     1.08     0.61
+R width/height major                   0.55     0.58     0.82     0.97     1.49     0.81
+blockArea_m2                         829.26  1081.37  1505.21  2282.93  9810.60  1763.36
+gardenArea_m2                         63.87   184.56   391.55   892.34  7243.30   655.70
+houseFrontage_m                        3.04     5.01     6.74     8.54    14.65     6.83
+houseDepth_m                           4.00     6.00     8.00     8.21     9.49     7.41
+houseHeight_m                          4.20     4.20     7.60    11.00    11.00     7.47
+
+== Objective terms (lower is better; weighted by lambda.*) ==
+E_streets                             0.133
+E_vistas                              0.086
+E_blocks                              0.041
+E_proportions                         0.336
+E_centers                             0.585
+E_terrain                             0.372
+E_accessibility                       0.042
+E_hierarchy                           0.000
+E_archProportion                      0.000
+E_facadeRhythm                        0.325
+E_ornament                            0.000
+E_neighbor                            0.000
+E_style                               0.000
+E_total                               1.920
+
+== Centres ==
+centre 0 seeded at (238, 218) attraction 0.90 strength 0.90 - seeded at best terrain suitability (flat, dry, near water when available)
+centre 1 emergent (phase 6) at (343, 107) attraction 0.64 strength 0.56 - emerged: route convergence 1.97, 170 houses within 130 m
+
+== Landmarks ==
+cathedral (neoclassical_monumental): 20 x 39 m, height 46 m, H/W 2.31, visible from 41% of approach samples - centre 0 strength 0.83, 62 houses within 200 m; fronts the central plaza
+civic hall (neoclassical_monumental): 14 x 16 m, height 17 m, H/W 1.23, visible from 13% of approach samples - centre 1 strength 0.56, 312 houses within 200 m; fronts the central plaza
+
+IMPLEMENTED vs APPROXIMATED: see README.md section 'Implementation status'.
+
+Villager mode: 0 surveyors, 0 masons, 596 houses built, 694 jobs
+
+CATACOMBS
+9.0 km of galleries, 25 quarry chambers, the ossuary, a lower level, a hall under the main square, la Plage, a bunker, 12 fontis, 9 stair(s) in mausoleums, 1 manholes
+Upper level floor y=74 (galleries 3 high), lower level floor y=67
+  Hall under the main square (salle Z): 168 75 91
+  Sacellum: 221 75 23
+  Samaritaine fountain: 190 75 44
+  Sepulchral lamp: 196 75 21
+  Gilbert's tomb: 203 75 44
+  Crypt of the Passion: 208 75 23
+  Ossuary portal: 178 75 18
+  Ossuary (middle): 201 75 12
+  Bunker (through a crawl-hole): 28 75 44
+  La Plage: 139 75 -112
+  Old quarry (l'Atelier): -26 75 -21
+  Bone shaft: -24 75 -8
+  Ramp to the lower level: -57 75 20
+  Flooded gallery (lower level): -50 68 53
+  Entrance stair (mausoleum): 66 93 9
+  Exit stair: 219 93 11
+  Mausoleum stair: 70 93 140
+  Mausoleum stair: 85 93 143
+  Mausoleum stair: -54 93 37
+  Mausoleum stair: -69 93 37
+  Mausoleum stair: 232 93 202
+  Mausoleum stair: 225 93 196
+  Mausoleum stair: 35 93 -95
+  Mausoleum stair: 26 93 -92
+  Manhole: 249 93 -8
+  Consolidated fontis (painted strata): 220 75 185
+  Quarrymen's footbath: 94 75 6
+  Port-Mahon model: 129 75 0
+  Grate onto a lower gallery: 65 75 0
+
+STRUCTURAL DECISIONS
+[phase 0] Seeded centre 0 at (238, 218): seeded at best terrain suitability (flat, dry, near water when available)
+[phase 1] Central plaza formed at centre 0
+[phase 1] 1 oversize block(s) attracted cutting streets (access penalty feedback)
+[phase 2] Landmark placed: cathedral 20x39 m, height 46 m (H/W 2.31) at centre 0 - centre 0 strength 0.83, 62 houses within 200 m; fronts the central plaza
+[phase 2] Existing street aligned with cathedral promoted to civic approach
+[phase 2] 1 oversize block(s) attracted cutting streets (access penalty feedback)
+[phase 3] 1 oversize block(s) attracted cutting streets (access penalty feedback)
+[phase 4] Cemetery 0 laid out: a block of 1490 m2 (town 23701 m2, cemeteries 1490 of 1185 m2)
+[phase 4] 2 oversize block(s) attracted cutting streets (access penalty feedback)
+[phase 5] 6 oversize block(s) attracted cutting streets (access penalty feedback)
+[phase 6] New centre 1 emerged at (343, 107): route convergence 1.97, 170 houses within 130 m
+[phase 6] Centre 1 spawned 2 connector(s) into open directions
+[phase 6] Central plaza formed at centre 1
+[phase 6] Cemetery 1 laid out: a block of 1246 m2 (town 53951 m2, cemeteries 2736 of 2698 m2)
+[phase 6] 5 oversize block(s) attracted cutting streets (access penalty feedback)
+[phase 0] 21 dead-end street(s) inside blocks taken out
+[phase 0] 2 dead-end street(s) inside blocks taken out
+[phase 0] 9 dead-end street(s) inside blocks taken out
+[phase 0] 2 dead-end street(s) inside blocks taken out
+[phase 7] Junction square formed at (110, 299): score 0.75 (convergence, density, centrality)
+[phase 7] Cemetery 2 laid out: a block of 1538 m2 (town 86405 m2, cemeteries 4275 of 4320 m2)
+[phase 7] Landmark placed: civic hall 14x16 m, height 17 m (H/W 1.23) at centre 1 - centre 1 strength 0.56, 312 houses within 200 m; fronts the central plaza

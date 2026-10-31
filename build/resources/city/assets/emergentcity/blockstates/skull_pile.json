@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=north,skulls=1": {
+      "model": "emergentcity:block/skull_pile_1"
+    },
+    "facing=north,skulls=2": {
+      "model": "emergentcity:block/skull_pile_2"
+    },
+    "facing=north,skulls=3": {
+      "model": "emergentcity:block/skull_pile_3"
+    },
+    "facing=north,skulls=4": {
+      "model": "emergentcity:block/skull_pile_4"
+    },
+    "facing=east,skulls=1": {
+      "model": "emergentcity:block/skull_pile_1",
+      "y": 90
+    },
+    "facing=east,skulls=2": {
+      "model": "emergentcity:block/skull_pile_2",
+      "y": 90
+    },
+    "facing=east,skulls=3": {
+      "model": "emergentcity:block/skull_pile_3",
+      "y": 90
+    },
+    "facing=east,skulls=4": {
+      "model": "emergentcity:block/skull_pile_4",
+      "y": 90
+    },
+    "facing=south,skulls=1": {
+      "model": "emergentcity:block/skull_pile_1",
+      "y": 180
+    },
+    "facing=south,skulls=2": {
+      "model": "emergentcity:block/skull_pile_2",
+      "y": 180
+    },
+    "facing=south,skulls=3": {
+      "model": "emergentcity:block/skull_pile_3",
+      "y": 180
+    },
+    "facing=south,skulls=4": {
+      "model": "emergentcity:block/skull_pile_4",
+      "y": 180
+    },
+    "facing=west,skulls=1": {
+      "model": "emergentcity:block/skull_pile_1",
+      "y": 270
+    },
+    "facing=west,skulls=2": {
+      "model": "emergentcity:block/skull_pile_2",
+      "y": 270
+    },
+    "facing=west,skulls=3": {
+      "model": "emergentcity:block/skull_pile_3",
+      "y": 270
+    },
+    "facing=west,skulls=4": {
+      "model": "emergentcity:block/skull_pile_4",
+      "y": 270
+    }
+  }
+}

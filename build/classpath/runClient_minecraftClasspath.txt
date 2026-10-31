@@ -1,4 +1,4 @@
-/Users/indigo/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.28_mapped_official_1.20.1/forge-1.20.1-47.4.28_mapped_official_1.20.1.jar
+/Users/indigo/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.4.28_mapped_official_1.20.1/forge-1.20.1-47.4.28_mapped_official_1.20.1-recomp.jar
 /Users/indigo/.gradle/caches/forge_gradle/minecraft_repo/versions/1.20.1/client-extra.jar
 /Users/indigo/.gradle/caches/modules-2/files-2.1/net.minecraftforge/fmlearlydisplay/1.20.1-47.4.28/3dadce8bfe5d10799189cac6196ea1162a04b9ae/fmlearlydisplay-1.20.1-47.4.28.jar
 /Users/indigo/.gradle/caches/modules-2/files-2.1/net.minecraftforge/javafmllanguage/1.20.1-47.4.28/2f0765ea31561e9dfaf8eb8b54ac0548cd857559/javafmllanguage-1.20.1-47.4.28.jar

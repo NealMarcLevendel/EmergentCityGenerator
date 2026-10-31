@@ -1,0 +1,32 @@
+{
+  "variants": {
+    "axis=z,layers=1": {
+      "model": "emergentcity:block/femur_stack_1"
+    },
+    "axis=z,layers=2": {
+      "model": "emergentcity:block/femur_stack_2"
+    },
+    "axis=z,layers=3": {
+      "model": "emergentcity:block/femur_stack_3"
+    },
+    "axis=z,layers=4": {
+      "model": "emergentcity:block/femur_stack_4"
+    },
+    "axis=x,layers=1": {
+      "model": "emergentcity:block/femur_stack_1",
+      "y": 90
+    },
+    "axis=x,layers=2": {
+      "model": "emergentcity:block/femur_stack_2",
+      "y": 90
+    },
+    "axis=x,layers=3": {
+      "model": "emergentcity:block/femur_stack_3",
+      "y": 90
+    },
+    "axis=x,layers=4": {
+      "model": "emergentcity:block/femur_stack_4",
+      "y": 90
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "emergentcity:block/bone_gravel"
+      },
+      {
+        "model": "emergentcity:block/bone_gravel",
+        "y": 90
+      },
+      {
+        "model": "emergentcity:block/bone_gravel",
+        "y": 180
+      },
+      {
+        "model": "emergentcity:block/bone_gravel",
+        "y": 270
+      }
+    ]
+  }
+}

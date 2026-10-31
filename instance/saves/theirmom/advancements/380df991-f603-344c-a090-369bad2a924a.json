@@ -1,0 +1,15 @@
+{
+  "minecraft:recipes/decorations/soul_lantern": {
+    "criteria": {
+      "has_soul_torch": "2026-10-29 21:42:12 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2026-10-29 21:32:10 -0500"
+    },
+    "done": true
+  },
+  "DataVersion": 3465
+}

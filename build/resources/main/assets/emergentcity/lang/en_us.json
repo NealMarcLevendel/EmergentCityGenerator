@@ -1,3 +1,6 @@
 {
-  "generator.emergentcity.city_test": "City Test (gentle hills, no trees)"
+  "generator.emergentcity.city_test": "City Test (gentle hills, no trees)",
+  "block.emergentcity.bone_gravel": "Bone Gravel",
+  "block.emergentcity.skull_pile": "Skulls",
+  "block.emergentcity.femur_stack": "Femurs"
 }

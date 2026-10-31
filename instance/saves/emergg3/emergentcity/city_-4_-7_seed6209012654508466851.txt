@@ -1,0 +1,202 @@
+EMERGENT HISTORIC CITY - metrics report
+terrain: Minecraft area at -4, -7
+seed: 6209012654508466851
+fingerprint: 8984527f1d2a4a1b
+
+== Growth phases ==
+phase 1: nodes=230 edges=255 len=4218m blocks=26 houses=358 centres=3 plazas=3 landmarks=0 bridges=0 heads=43
+phase 2: nodes=606 edges=685 len=10499m blocks=84 houses=1247 centres=3 plazas=4 landmarks=0 bridges=0 heads=59
+phase 3: nodes=746 edges=842 len=12681m blocks=99 houses=1454 centres=3 plazas=5 landmarks=2 bridges=0 heads=53
+phase 4: nodes=862 edges=974 len=14486m blocks=115 houses=1661 centres=3 plazas=5 landmarks=2 bridges=0 heads=49
+phase 5: nodes=941 edges=1065 len=15691m blocks=127 houses=1853 centres=3 plazas=6 landmarks=2 bridges=0 heads=47
+phase 6: nodes=1112 edges=1260 len=18412m blocks=151 houses=2148 centres=4 plazas=8 landmarks=3 bridges=0 heads=54
+phase 7: nodes=1457 edges=1648 len=23950m blocks=192 houses=2800 centres=4 plazas=8 landmarks=3 bridges=0 heads=62
+phase 8: nodes=1525 edges=1723 len=24471m blocks=199 houses=2749 centres=4 plazas=8 landmarks=3 bridges=0 heads=62
+
+== Acceptance criteria ==
+L1    soft PASS   coherent centre(s) with plaza                  4 centre(s), 8 plaza(s)
+L2    soft PASS   monument meets height/width threshold          max H/W 2.43 (min 1.00)
+L3    soft PASS   street hierarchy, width tracks demand          3 classes, Spearman(width, demand)=0.98
+L4    soft FAIL   gradual transitions                            1 within-class width jumps > 1.5 m; p90 turn along street 12.2 deg
+L5    soft PASS   few long featureless straight streets          featureless share 2.5% (purposeful axis samples 17)
+L6    soft PASS   terminating vistas and enclosure               facade endpoints 94%, median enclosure 1.00
+L7    soft PASS   compact blocks, few oversize                   median block 1711 m2, oversize 10.1%
+L8    HARD FAIL   all houses valid four-node quads               55 invalid of 2749
+L9    soft PASS   fronts face streets, shared gardens            99.9% fronting streets, 98% housed blocks with garden
+L10   soft PASS   ordinary street R near 1:1                     median R ordinary 0.65, major 1.08
+L11a  HARD PASS   planar street graph (no crossings)             0 crossings
+L11b  HARD FAIL   no overlapping / misplaced houses              282 overlaps, 0 outside block, 26 crossing a street
+L11c  HARD PASS   network connected                              100.0% nodes reachable from main centre
+L11d  HARD PASS   streets avoid water except bridges             0 non-bridge segments on water
+L11e  HARD FAIL   min junction angle respected                   min 37.6 deg
+N1    soft PASS   legible tier hierarchy                         tiers 2/3/4 = 329/2008/412, monuments 3
+N3    soft PASS   ornament decreases with tier                   mean ornament t1/t2/t3/t4 = 1.00/0.45/0.14/0.03
+N7    soft PASS   coherent street wall                           floor jumps >1 storey 0.0%, style coherence 100%
+N9    soft PASS   monuments break pattern, scarcity kept         landmark/p90 house height 3.1x, tier-2 share 12.0%
+N10   soft PASS   vista endpoints get more important architecture importance lift 0.144
+hard constraints: FAILED; soft criteria passed: 13/14
+
+== Scalar metrics ==
+nodes                                  1525.000
+edges                                  1723.000
+streetLength_m                        24470.766
+blocks                                  199.000
+houses                                 2749.000
+centres                                   4.000
+emergentCentres                           3.000
+plazas                                    8.000
+landmarks                                 3.000
+bridges                                   0.000
+cityRadius_m                            246.712
+edgeCrossings                             0.000
+invalidHouseQuads                        55.000
+houseOverlaps                           282.000
+housesOutsideBlock                        0.000
+housesCrossingStreets                    26.000
+connectedShare                            1.000
+deadEndShare                              0.105
+nonBridgeEdgesOnWater                     0.000
+widthDemandSpearman                       0.975
+lengthShare.class1                        0.345
+lengthShare.class2                        0.487
+lengthShare.class3                        0.147
+lengthShare.class4                        0.021
+withinClassWidthJumps                     1.000
+minJunctionAngle_deg                     37.627
+featurelessVistaShare                     0.025
+vistaFacadeEndpointShare                  0.939
+vistaLandmarkEndpointShare                0.009
+purposefulAxisSamples                    17.000
+countrysideViewShare                      0.031
+E_proportion_mean_ordinary                0.341
+oversizeBlockShare                        0.101
+housedBlocksWithGardenShare               0.979
+housesFrontingStreetShare                 0.999
+landmarkMaxHW                             2.429
+landmarkMaxVisibility                     0.139
+tier2Share                                0.120
+tier2MeanOrnament                         0.450
+tier3Share                                0.730
+tier3MeanOrnament                         0.136
+tier4Share                                0.150
+tier4MeanOrnament                         0.025
+tier1MeanOrnament                         1.000
+landmarkToP90HouseHeight                  3.091
+neighbourFloorJumpShare                   0.000
+neighbourStyleCoherence                   1.000
+vistaEndpointImportanceLift               0.144
+
+== Distributions (min / p10 / median / p90 / max / mean) ==
+turnAngleAlongStreets_deg              0.00     0.00     6.00    12.21    39.87     7.33
+streetWidth_m                          3.05     3.35     5.56     8.91    18.00     5.92
+streetLength_m (chains)               12.85    14.85    50.35   163.64   825.16    76.95
+vistaRatio (len/width)                 0.59     2.76     5.30    13.29    49.98     6.90
+enclosure (0-1)                        0.00     0.50     1.00     1.00     1.00     0.82
+R width/height ordinary                0.29     0.43     0.65     0.91     1.32     0.64
+R width/height major                   0.61     0.82     1.08     1.64     2.55     1.17
+blockArea_m2                         759.88  1019.87  1711.18  3286.02  7902.39  2006.95
+gardenArea_m2                         33.48   155.74   437.68  2052.11  4568.35   815.24
+houseFrontage_m                        2.59     4.73     6.86     8.94    14.78     6.90
+houseDepth_m                           4.00     6.82     8.00     8.59     9.49     7.68
+houseHeight_m                          4.20     7.60     7.60    11.00    14.40     7.82
+
+== Objective terms (lower is better; weighted by lambda.*) ==
+E_streets                             0.136
+E_vistas                              0.025
+E_blocks                              0.111
+E_proportions                         0.341
+E_centers                             0.861
+E_terrain                             0.390
+E_accessibility                       0.105
+E_hierarchy                           0.000
+E_archProportion                      0.001
+E_facadeRhythm                        0.331
+E_ornament                            0.000
+E_neighbor                            0.000
+E_style                               0.000
+E_total                               2.301
+
+== Centres ==
+centre 0 seeded at (250, 510) attraction 0.90 strength 0.90 - seeded at best terrain suitability (flat, dry, near water when available)
+centre 1 emergent (phase 1) at (96, 316) attraction 0.68 strength 0.59 - end of a boulevard
+centre 2 emergent (phase 1) at (410, 714) attraction 0.63 strength 0.47 - end of a boulevard
+centre 3 emergent (phase 6) at (501, 342) attraction 0.68 strength 0.59 - emerged: route convergence 1.55, 192 houses within 130 m
+
+== Landmarks ==
+colosseum (neoclassical_monumental): 41 x 35 m, height 15 m, H/W 0.37, visible from 3% of approach samples - free-standing in the square of centre 1
+church (neoclassical_monumental): 14 x 28 m, height 34 m, H/W 2.43, visible from 14% of approach samples - free-standing in the square of centre 2
+civic hall (neoclassical_monumental): 14 x 16 m, height 20 m, H/W 1.43, visible from 3% of approach samples - free-standing in the square of centre 3
+
+IMPLEMENTED vs APPROXIMATED: see README.md section 'Implementation status'.
+
+World extent: x -417..342, z -364..406
+World origin of simulation coordinates: x=-420 z=-423 (simulation y = world z)
+
+CATACOMBS
+38.0 km of galleries, 83 quarry chambers, the ossuary, a lower level, a hall under the main square, la Plage, a bunker, 12 fontis, 5 manholes
+Upper level floor y=51 (galleries 3 high), lower level floor y=44
+  Hall under the main square (salle Z): -165 52 158
+  Sacellum: -305 52 206
+  Samaritaine fountain: -342 52 210
+  Sepulchral lamp: -336 52 196
+  Gilbert's tomb: -323 52 209
+  Crypt of the Passion: -318 52 204
+  Ossuary portal: -354 52 185
+  Ossuary (middle): -334 52 181
+  La Plage: -280 52 -25
+  Old quarry (l'Atelier): -192 52 -102
+  Bone shaft: -188 52 -99
+  Bunker (through a crawl-hole): -235 52 -245
+  Ramp to the lower level: -271 52 144
+  Flooded gallery (lower level): -210 45 39
+  Entrance stair: -306 79 147
+  Exit stair: -292 80 200
+  Manhole: 201 80 -203
+  Manhole: 37 76 278
+  Manhole: -127 77 221
+  Manhole: -116 80 -211
+  Manhole: -12 80 199
+  Consolidated fontis (painted strata): -138 52 1
+  Quarrymen's footbath: -323 52 137
+  Port-Mahon model: -346 52 142
+  Grate onto a lower gallery: -308 52 148
+
+STRUCTURAL DECISIONS
+[phase 0] Seeded centre 0 at (250, 510): seeded at best terrain suitability (flat, dry, near water when available)
+[phase 0] Spawned 2 straight boulevard(s) from the main centre, heading 50 deg
+[phase 1] Boulevard reached its square
+[phase 1] Boulevard reached its square
+[phase 1] Square planned at the end of a boulevard (96, 316)
+[phase 1] Square planned at the end of a boulevard (410, 714)
+[phase 1] Central plaza formed at centre 0
+[phase 1] Central plaza formed at centre 1
+[phase 1] Central plaza formed at centre 2
+[phase 1] 8 oversize block(s) attracted cutting streets (access penalty feedback)
+[phase 2] Junction square formed at (112, 560): score 0.90 (convergence, density, centrality)
+[phase 2] Square of centre 0 grows: block of 1165 m2 merged in (streets between them removed)
+[phase 2] Square of centre 1 grows: block of 1399 m2 merged in (streets between them removed)
+[phase 2] Square of centre 2 grows: block of 1882 m2 merged in (streets between them removed)
+[phase 2] Square of centre 2 grows: block of 3800 m2 merged in (streets between them removed)
+[phase 2] 14 oversize block(s) attracted cutting streets (access penalty feedback)
+[phase 3] Junction square formed at (150, 227): score 0.93 (convergence, density, centrality)
+[phase 3] Square of centre 0 grows: block of 1255 m2 merged in (streets between them removed)
+[phase 3] Square of centre 0 grows: block of 939 m2 merged in (streets between them removed)
+[phase 3] Free-standing colosseum 41x35 m, height 15 m, in the square of centre 1 (4256 m2)
+[phase 3] Free-standing church 14x28 m, height 34 m, in the square of centre 2 (3751 m2)
+[phase 3] 14 oversize block(s) attracted cutting streets (access penalty feedback)
+[phase 4] Square of centre 0 grows: block of 939 m2 merged in (streets between them removed)
+[phase 4] Square of centre 0 grows: block of 1533 m2 merged in (streets between them removed)
+[phase 4] 14 oversize block(s) attracted cutting streets (access penalty feedback)
+[phase 5] Junction square formed at (532, 772): score 0.75 (convergence, density, centrality)
+[phase 5] Square of centre 0 grows: block of 1166 m2 merged in (streets between them removed)
+[phase 5] Square of centre 0 grows: block of 1802 m2 merged in (streets between them removed)
+[phase 5] 14 oversize block(s) attracted cutting streets (access penalty feedback)
+[phase 6] New centre 3 emerged at (501, 342): route convergence 1.55, 192 houses within 130 m
+[phase 6] Centre 3 spawned 1 connector(s) into open directions
+[phase 6] Central plaza formed at centre 3
+[phase 6] Junction square formed at (300, 416): score 0.93 (convergence, density, centrality)
+[phase 6] Square of centre 0 grows: block of 1802 m2 merged in (streets between them removed)
+[phase 6] Square of centre 0 grows: block of 1434 m2 merged in (streets between them removed)
+[phase 6] Free-standing civic hall 14x16 m, height 20 m, in the square of centre 3 (1518 m2)
+[phase 6] 14 oversize block(s) attracted cutting streets (access penalty feedback)
+[phase 7] 14 oversize block(s) attracted cutting streets (access penalty feedback)

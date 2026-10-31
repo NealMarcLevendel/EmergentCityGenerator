@@ -1,0 +1,33 @@
+# The plague mod: an addon to Emergent City. The placeholders below are filled in from the workspace gradle.properties.
+modLoader="javafml"
+loaderVersion="[47,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="emergentplague"
+version="0.1.0"
+displayName="Emergent City: Plague"
+authors="you"
+description='''Plague mode for Emergent City's evolving towns: graves creep out over the town, the dead fill the catacombs or a plague pit, the town falls into ruin, and newcomers build over it, forever if you like.'''
+
+[[dependencies.emergentplague]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.emergentplague]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,1.21)"
+    ordering="NONE"
+    side="BOTH"
+
+# needs the city mod, and loads after it
+[[dependencies.emergentplague]]
+    modId="emergentcity"
+    mandatory=true
+    versionRange="[0.1.0,)"
+    ordering="AFTER"
+    side="BOTH"

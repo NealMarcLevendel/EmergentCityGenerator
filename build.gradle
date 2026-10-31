@@ -4,14 +4,47 @@ plugins {
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
 }
 
+// One workspace, two mods, each in its own folder (as Mekanism keeps its modules):
+//   emergentcity/    the city, with its cemeteries and catacombs     -> build/libs/emergentcity-<version>.jar
+//   emergentplague/  the plague, an addon that needs the city mod    -> build/libs/emergentplague-<version>.jar
+// ./play.sh builds both and starts Minecraft with both, in instance/; ./play.sh build makes the two jars.
+
 version = mod_version
 group = mod_group_id
 
 base {
-    archivesName = mod_id
+    archivesName = 'emergent-workspace'
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+sourceSets {
+    main { // the workspace itself has no code
+        java { srcDirs = [] }
+        resources { srcDirs = [] }
+    }
+    city {
+        java { srcDirs = ['emergentcity/src/main/java'] }
+        resources { srcDirs = ['emergentcity/src/main/resources'] }
+    }
+    plague {
+        java { srcDirs = ['emergentplague/src/main/java'] }
+        resources { srcDirs = ['emergentplague/src/main/resources'] }
+        // the plague builds on the city mod's public classes
+        compileClasspath += city.output
+        runtimeClasspath += city.output
+    }
+}
+
+configurations {
+    // Minecraft and Forge for both mods
+    cityImplementation.extendsFrom(implementation)
+    plagueImplementation.extendsFrom(implementation)
+    cityCompileOnly.extendsFrom(compileOnly)
+    plagueCompileOnly.extendsFrom(compileOnly)
+    cityRuntimeOnly.extendsFrom(runtimeOnly)
+    plagueRuntimeOnly.extendsFrom(runtimeOnly)
+}
 
 minecraft {
     mappings channel: mapping_channel, version: mapping_version
@@ -19,13 +52,12 @@ minecraft {
 
     runs {
         configureEach {
-            workingDirectory project.file('run')
+            workingDirectory project.file('instance') // the game folder: saves, options, logs, config
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'info'
             mods {
-                "${mod_id}" {
-                    source sourceSets.main
-                }
+                emergentcity { source sourceSets.city }
+                emergentplague { source sourceSets.plague }
             }
         }
         client {}
@@ -42,31 +74,59 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 }
 
-tasks.named('processResources', ProcessResources).configure {
-    var replaceProperties = [
-            minecraft_version_range: minecraft_version_range, forge_version_range: forge_version_range,
-            loader_version_range: loader_version_range, mod_id: mod_id, mod_name: mod_name, mod_license: mod_license,
-            mod_version: mod_version, mod_authors: mod_authors, mod_description: mod_description
-    ]
-    inputs.properties replaceProperties
+def common = [minecraft_version_range: minecraft_version_range, forge_version_range: forge_version_range,
+              loader_version_range: loader_version_range, mod_license: mod_license, mod_authors: mod_authors]
+def cityProps = common + [mod_id: mod_id, mod_name: mod_name, mod_version: mod_version, mod_description: mod_description]
+def plagueProps = common + [mod_id: plague_mod_id, mod_name: plague_mod_name, mod_version: plague_mod_version,
+                            mod_description: plague_mod_description, city_mod_id: mod_id, city_version: mod_version]
+
+tasks.named('processCityResources', ProcessResources).configure {
+    inputs.properties cityProps
     filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
-        expand replaceProperties + [project: project]
+        expand cityProps + [project: project]
     }
 }
 
-tasks.named('jar', Jar).configure {
-    manifest {
-        attributes([
-                'Specification-Title'     : mod_id,
-                'Specification-Vendor'    : mod_authors,
-                'Specification-Version'   : '1',
-                'Implementation-Title'    : project.name,
-                'Implementation-Version'  : project.jar.archiveVersion,
-                'Implementation-Vendor'   : mod_authors
-        ])
+tasks.named('processPlagueResources', ProcessResources).configure {
+    inputs.properties plagueProps
+    filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
+        expand plagueProps + [project: project]
     }
-    finalizedBy 'reobfJar'
 }
+
+// one jar per mod
+def manifestFor = { String id, String ver ->
+    ['Specification-Title'   : id,
+     'Specification-Vendor'  : mod_authors,
+     'Specification-Version' : '1',
+     'Implementation-Title'  : id,
+     'Implementation-Version': ver,
+     'Implementation-Vendor' : mod_authors]
+}
+
+tasks.register('cityJar', Jar) {
+    archiveBaseName = mod_id
+    archiveVersion = mod_version
+    from sourceSets.city.output
+    manifest { attributes(manifestFor(mod_id, mod_version)) }
+}
+
+tasks.register('plagueJar', Jar) {
+    archiveBaseName = plague_mod_id
+    archiveVersion = plague_mod_version
+    from sourceSets.plague.output
+    manifest { attributes(manifestFor(plague_mod_id, plague_mod_version)) }
+}
+
+// back to the names the game uses, for the jars that go into a normal mods folder
+reobf {
+    cityJar {}
+    plagueJar {}
+}
+tasks.named('cityJar') { finalizedBy 'reobfCityJar' }
+tasks.named('plagueJar') { finalizedBy 'reobfPlagueJar' }
+
+tasks.named('assemble') { dependsOn 'cityJar', 'plagueJar' }
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
